@@ -1,0 +1,2 @@
+Assignment: Predict Earnings using Multivariable Regression
+Use the famous National Longitudinal Survey of Youth 1997-2011 to run a Multivariable Regression to predict salaries. How are earnings determined and what does this imply from government policy?
