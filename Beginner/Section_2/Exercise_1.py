@@ -11,3 +11,5 @@ two_digit_number = input("Type a two digit number: ")
 
 ####################################
 #Write your code below this line 👇
+result = two_digit_number[0] + two_digit_number[1]
+print(result)

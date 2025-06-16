@@ -17,3 +17,6 @@ weight = input("enter your weight in kg: ")
 # 🚨 Don't change the code above 👆
 
 #Write your code below this line 👇
+
+bmi = int(weight) / (int(height) ** 2)
+print(round(bmi))

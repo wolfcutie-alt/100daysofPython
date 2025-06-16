@@ -9,3 +9,4 @@ https://www.google.com/search?q=how+to+get+the+length+of+a+string+in+python+stac
 Warning. Your program should work for different inputs. e.g. any name that you input
 '''
 #Write your code below this line 👇
+print(len("Nathan"))

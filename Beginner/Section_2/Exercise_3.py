@@ -20,3 +20,11 @@ age = input("What is your current age? ")
 # 🚨 Don't change the code above 👆
 
 #Write your code below this line 👇
+year = 90 - age
+
+if year % 12 == 0:
+    month = year / 12
+    week = 0
+    day = 0
+else:
+    month = year % 12

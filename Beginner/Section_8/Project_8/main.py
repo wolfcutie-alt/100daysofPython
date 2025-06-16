@@ -52,3 +52,15 @@ shift = int(input("Type the shift number:\n"))
 #e.g. Type 'yes' if you want to go again. Otherwise type 'no'.
 #If they type 'yes' then ask them for the direction/text/shift again and call the caesar() function again?
 #Hint: Try creating a while loop that continues to execute the program if the user types 'yes'. 
+
+def encrypt(text, shift):
+  cipher_text = ''
+  for i in range(len(text)):
+    if shift > len(alphabet) - alphabet.index(text[i]):
+      cipher_text += alphabet[alphabet.index(text[i]) + shift - len(alphabet)]
+    else:
+      cipher_text += alphabet[alphabet.index(text[i]) + shift]
+      
+  print(cipher_text)
+    
+encrypt(text, shift)

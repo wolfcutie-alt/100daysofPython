@@ -16,12 +16,8 @@ IMPORTANT: Notice the name of the function and parameters must match those on li
 '''
 
 #Write your code below this line 👇
-
-
-
-
-
-
+def paint_calc(height, width, cover):
+    print((height * width) / cover)
 
 #Write your code above this line 👆
 # Define a function called paint_calc() so that the code below works.   
@@ -31,4 +27,3 @@ test_h = int(input("Height of wall: "))
 test_w = int(input("Width of wall: "))
 coverage = 5
 paint_calc(height=test_h, width=test_w, cover=coverage)
-
