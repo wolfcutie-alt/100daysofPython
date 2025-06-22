@@ -59,3 +59,82 @@
 
 #Hint 14: Ask the user if they want to restart the game. If they answer yes, clear the console and start a new game of blackjack and show the logo from art.py.
 
+from art import logo
+import random
+import os
+
+end_game = False
+
+def deal_card():
+    cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10]
+    
+    return random.choice(cards)
+
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    
+def calculate_score(cards):
+    if len(cards) == 2:
+        if 11 in cards and 10 in cards:
+            return 0
+        else:
+            return sum(cards)
+    else:
+        if 11 in cards and sum(cards) > 21:
+            cards.remove(11)
+            cards.append(1)
+            
+            return sum(cards)      
+        else:
+            return sum(cards)
+    
+def compare(user_score, computer_score):
+    if computer_score == user_score:
+        print("Draw")
+    elif computer_score == 0 or user_score > 21 or (computer_score > user_score and user_score > 0 and computer_score < 21):
+        print("Computer Win")
+    else:
+        print("User Win")
+        
+while not end_game:
+    print(logo)
+    
+    user_cards = []
+    computer_cards = []
+    
+    while (len(user_cards) < 2):
+        user_cards.append(deal_card())
+        computer_cards.append(deal_card())
+        
+    print(user_cards, computer_cards)
+    
+    if calculate_score(user_cards) == 0 or calculate_score(computer_cards) == 0 or calculate_score(user_cards) > 21 or calculate_score(computer_cards) > 21:
+        
+        compare(calculate_score(user_cards), calculate_score(computer_cards))
+        
+        continue_play = input("Do you want to restart? 'Yes' or 'No' ").lower()
+    
+    else:  
+        while calculate_score(user_cards) < 21 and calculate_score(user_cards) > 0: 
+            add_card = input("Draw another card: 'Yes' or 'No' ").lower()
+            if add_card == 'yes':
+                user_cards.append(deal_card())
+                print(user_cards, computer_cards)
+            else:
+                break
+
+        while calculate_score(computer_cards) < 17 and calculate_score(computer_cards) > 0:
+            computer_cards.append(deal_card())
+        
+        print(user_cards, computer_cards)
+    
+        compare(calculate_score(user_cards), calculate_score(computer_cards))
+        
+        continue_play = input("Do you want to restart? 'Yes' or 'No' ").lower()
+    
+    if continue_play == 'yes':
+        clear()
+        end_game = False
+    else:
+        print("See you again!!!")
+        end_game = True

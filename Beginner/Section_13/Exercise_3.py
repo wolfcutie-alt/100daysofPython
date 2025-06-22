@@ -16,7 +16,7 @@ When the number is divisible by 5, then instead of printing the number it should
 '''
 
 for number in range(1, 101):
-      if number % 3 == 0 or number % 5 == 0:
+  if number % 3 == 0 or number % 5 == 0:
     print("FizzBuzz")
   if number % 3 == 0:
     print("Fizz")
