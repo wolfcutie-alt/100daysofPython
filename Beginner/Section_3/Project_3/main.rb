@@ -28,3 +28,30 @@ puts "Your mission is to find the treasure."
 
 #Write your code below this line 👇
 
+print "You're at a crossroad. Where do you want to go? Type 'left' or 'right': "
+decision_1 = gets.chomp.downcase
+
+if decision_1 == "left"
+  print "You've come to a lake. There is an island in the middle o the lake. Type 'wait' to wait for a boat. Type 'swim' to swim across: "
+  decision_2 = gets.chomp.downcase
+
+  if decision_2 == "wait"
+    print "You arrive at the island unharmed. There is a house with 3 doors. One red, one yellow, one blue. Which color do you choose? "
+    decision_3 = gets.chomp.downcase
+
+    if decision_3 == "red"
+      puts "You've burned by fire.Game Over."
+    elsif decision_3 == "blue"
+      puts "You've eaten by beasts. Game Over."
+    elsif decision_3 == "yellow"
+      puts "You Win!"
+    else
+      puts "Game Over"
+    end
+  else
+    puts "You got attacked by an angry trout. Game Over."
+  end
+
+else
+  puts "You have fall into a hole. Game Over."
+end
